@@ -216,3 +216,7 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+
+# READY, SET, SCHOOL DATABASE
+data/*.db
