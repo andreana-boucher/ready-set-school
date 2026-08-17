@@ -87,7 +87,7 @@ Household school supplies can be managed through reusable application logic inst
 
 # ⬜ Phase 4 — School List Manager
 
-**Status:** Not Started
+**Status:** In Progress
 
 ## Goal
 
@@ -95,20 +95,25 @@ Build the application logic needed to create and manage school supply lists and 
 
 ## Plan
 
-- [ ] Create a school supply list
-- [ ] View saved school supply lists
-- [ ] Edit school list details
-- [ ] Delete school supply lists
-- [ ] Add required items to a school list
-- [ ] View required items
-- [ ] Edit required items
-- [ ] Delete required items
-- [ ] Keep required items linked to the correct school list
-- [ ] Test using a real school supply list
+- [x] Create a school supply list
+- [x] View saved school supply lists
+- [x] Edit school list details
+- [x] Delete school supply lists
+- [x] Add required items to a school list
+- [x] View required items
+- [x] Edit required items
+- [x] Delete required items
+- [x] Keep required items linked to the correct school list
+- [ ] Test using a realistic school supply list
 
 ## Outcome
 
 School supply lists and their required items can be managed through reusable application logic and are ready to be used by the comparison engine.
+
+## Future Features
+- CSV import
+- PDF import
+- OCR / automatic list extraction
 
 ---
 
