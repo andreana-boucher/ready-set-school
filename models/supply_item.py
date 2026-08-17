@@ -22,6 +22,12 @@ class SupplyItem:
         self.notes = notes
         self.id = id
 
+        if not isinstance(name, str):
+            raise TypeError('Name must be a string.')
+        
+        if not name.strip():
+            raise ValueError('Name cannot be empty.')
+
         if not isinstance(quantity, int):
             raise TypeError('Quantity must be an integer.')
 
@@ -30,7 +36,7 @@ class SupplyItem:
 
         if condition not in self.VALID_CONDITIONS:
             raise ValueError(
-                'Condition must be New, Good, Fair, or Poor'
+                'Condition must be New, Good, Fair, or Poor.'
             )
         
 

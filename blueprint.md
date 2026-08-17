@@ -58,26 +58,26 @@ Household inventory and school supply lists can be stored, retrieved, edited, an
 
 ---
 
-# ⬜ Phase 3 — Inventory Manager
+# ✅ Phase 3 — Inventory Manager
 
-**Status:** Not Started
+**Status:** Complete
 
 ## Goal
 
-Turn the household supply database functions into usable inventory management.
+Turn the existing school supply database functions into usable inventory management.
 
 ## Plan
 
-- [ ] Add household supplies
-- [ ] View all saved supplies
-- [ ] Edit existing supplies
-- [ ] Delete supplies
-- [ ] Track quantity
-- [ ] Track condition
-- [ ] Track colour
-- [ ] Track specifications
-- [ ] Validate inventory input
-- [ ] Prepare inventory functions for GUI use
+- [x] Add existing school supplies
+- [x] View all saved supplies
+- [x] Edit existing supplies
+- [x] Delete supplies
+- [x] Track quantity
+- [x] Track condition
+- [x] Track colour
+- [x] Track specifications
+- [x] Validate inventory input
+- [x] Prepare inventory functions for GUI use
 
 ## Outcome
 
