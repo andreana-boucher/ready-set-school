@@ -2,6 +2,7 @@ import sqlite3
 from models.supply_item import SupplyItem
 from models.school_supply_list import SchoolSupplyList
 from models.required_item import RequiredItem
+from models.shopping_item import ShoppingItem
 
 DATABASE_PATH = "data/ready_set_school.db"
 
@@ -378,3 +379,160 @@ def get_required_items_by_school_list(school_list_id: int):
         required_items.append(required_item)
 
     return required_items
+
+
+### CREATE THE SHOPPING LIST TABLE
+
+def create_shopping_list_table():
+    connection = create_connection()
+    cursor = connection.cursor()
+
+    cursor.execute("""
+        CREATE TABLE IF NOT EXISTS shopping_list (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            school_list_id INTEGER NOT NULL,
+            name TEXT NOT NULL,
+            quantity INTEGER NOT NULL,
+            colour TEXT,
+            specification TEXT,
+            notes TEXT,
+            purchased INTEGER NOT NULL DEFAULT 0,
+            FOREIGN KEY (school_list_id)
+                REFERENCES school_lists(id)
+        )
+    """)
+
+    connection.commit()
+    connection.close()
+
+
+### ADD SHOPPING ITEM
+# Saves a shopping item to the database.
+
+def add_shopping_item(shopping_item):
+    connection = create_connection()
+    cursor = connection.cursor()
+
+    cursor.execute("""
+        INSERT INTO shopping_list (
+            school_list_id,
+            name,
+            quantity,
+            colour,
+            specification,
+            notes,
+            purchased
+        )
+        VALUES (?, ?, ?, ?, ?, ?, ?)
+    """, (
+        shopping_item.school_list_id,
+        shopping_item.name,
+        shopping_item.quantity,
+        shopping_item.colour,
+        shopping_item.specification,
+        shopping_item.notes,
+        shopping_item.purchased
+    ))
+
+    connection.commit()
+    connection.close()
+
+
+### GET SHOPPING ITEMS
+# Retrieves all shopping items linked to a specific school list.
+
+def get_shopping_items_by_school_list(school_list_id: int):
+    connection = create_connection()
+    cursor = connection.cursor()
+
+    cursor.execute("""
+        SELECT * FROM shopping_list
+        WHERE school_list_id = ?
+    """, (school_list_id,))
+
+    rows = cursor.fetchall()
+
+    connection.close()
+
+    shopping_items = []
+
+    for row in rows:
+        shopping_item = ShoppingItem(
+            school_list_id=row[1],
+            name=row[2],
+            quantity=row[3],
+            colour=row[4],
+            specification=row[5],
+            notes=row[6],
+            purchased=bool(row[7]),
+            id=row[0]
+        )
+
+        shopping_items.append(shopping_item)
+
+    return shopping_items
+
+
+### UPDATE SHOPPING ITEM
+# Updates an existing shopping item in the database.
+
+def update_shopping_item(shopping_item):
+    connection = create_connection()
+    cursor = connection.cursor()
+
+    cursor.execute("""
+        UPDATE shopping_list
+        SET
+            school_list_id = ?,
+            name = ?,
+            quantity = ?,
+            colour = ?,
+            specification = ?,
+            notes = ?,
+            purchased = ?
+        WHERE id = ?
+    """, (
+        shopping_item.school_list_id,
+        shopping_item.name,
+        shopping_item.quantity,
+        shopping_item.colour,
+        shopping_item.specification,
+        shopping_item.notes,
+        shopping_item.purchased,
+        shopping_item.id
+    ))
+
+    connection.commit()
+    connection.close()
+
+
+### DELETE SHOPPING ITEM
+# Deletes a shopping item from the database.
+
+def delete_shopping_item(shopping_item_id: int):
+    connection = create_connection()
+    cursor = connection.cursor()
+
+    cursor.execute("""
+        DELETE FROM shopping_list
+        WHERE id = ?
+    """, (shopping_item_id,))
+
+    connection.commit()
+    connection.close()
+
+
+### DELETE SHOPPING ITEMS BY SCHOOL LIST
+# Deletes all shopping items linked to a specific school list.
+
+def delete_shopping_items_by_school_list(school_list_id: int):
+    connection = create_connection()
+    cursor = connection.cursor()
+
+    cursor.execute("""
+        DELETE FROM shopping_list
+        WHERE school_list_id = ?
+    """, (school_list_id,))
+
+    connection.commit()
+    connection.close()

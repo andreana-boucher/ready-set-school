@@ -85,9 +85,9 @@ Household school supplies can be managed through reusable application logic inst
 
 ---
 
-# ⬜ Phase 4 — School List Manager
+# ✅ Phase 4 — School List Manager
 
-**Status:** In Progress
+**Status:** Complete
 
 ## Goal
 
@@ -104,7 +104,7 @@ Build the application logic needed to create and manage school supply lists and 
 - [x] Edit required items
 - [x] Delete required items
 - [x] Keep required items linked to the correct school list
-- [ ] Test using a realistic school supply list
+- [x] Test using a realistic school supply list
 
 ## Outcome
 
@@ -119,24 +119,24 @@ School supply lists and their required items can be managed through reusable app
 
 # ⬜ Phase 5 — Comparison Engine & Shopping List
 
-**Status:** Not Started
+**Status:** In progress
 
 ## Goal
 
-Compare household inventory against school requirements and calculate exactly what still needs to be purchased.
+Compare schoool supplies inventory against school requirements and calculate exactly what still needs to be purchased.
 
 ## Plan
 
-- [ ] Match required items with household inventory
-- [ ] Compare required quantities with quantities already owned
-- [ ] Match colour when relevant
-- [ ] Match specifications when relevant
-- [ ] Consider item condition
-- [ ] Calculate missing quantities
-- [ ] Generate shopping list automatically
-- [ ] Show only items still needed
-- [ ] Track purchased and unpurchased items
-- [ ] Prepare shopping list data for printing/export
+- [x] Match required items with school supplies inventory
+- [x] Compare required quantities with quantities already owned
+- [x] Match colour when relevant
+- [x] Match specifications when relevant
+- [x] Consider item condition
+- [x] Calculate missing quantities
+- [x] Generate shopping list automatically
+- [x] Show only items still needed
+- [x] Track purchased and unpurchased items
+- [x] Prepare shopping list data for printing/export
 
 ## Outcome
 
