@@ -117,9 +117,9 @@ School supply lists and their required items can be managed through reusable app
 
 ---
 
-# ⬜ Phase 5 — Comparison Engine & Shopping List
+# ✅ Phase 5 — Comparison Engine & Shopping List
 
-**Status:** In progress
+**Status:** Complete
 
 ## Goal
 
@@ -146,7 +146,7 @@ The app can determine what the family already has, what is still missing, and ge
 
 # ⬜ Phase 6 — GUI, Printable Output & Polish
 
-**Status:** Not Started
+**Status:** In Progress
 
 ## Goal
 
@@ -154,19 +154,19 @@ Turn the working backend into a simple desktop application that is easy to use a
 
 ## Plan
 
-- [ ] Build the CustomTkinter main window
-- [ ] Create app navigation
-- [ ] Build inventory screen
+- [x] Build the CustomTkinter main window
+- [x] Create app navigation
+- [x] Build inventory screen
 - [ ] Build school list screen
 - [ ] Build comparison screen
 - [ ] Build shopping list screen
 - [ ] Add forms and validation messages
-- [ ] Add condition dropdowns
-- [ ] Add colour and specification fields
+- [x] Add condition dropdowns
+- [x] Add colour and specification fields
 - [ ] Add purchase tracking controls
 - [ ] Create printable shopping list output
 - [ ] Add Print / Export option
-- [ ] Test with real family data
+- [ ] Test locally with real family data
 - [ ] Improve layout and appearance
 - [ ] Complete final Version 1 testing
 - [ ] Commit and push Version 1
